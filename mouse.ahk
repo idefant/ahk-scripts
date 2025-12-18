@@ -2,9 +2,6 @@
 #SingleInstance Force
 #UseHook
 
-SoundBeep 1200, 120
-TrayTip "AHK", "mouse_modes loaded", 2
-
 ; ================== НАСТРОЙКИ ==================
 speedStep := 10            ; шаг изменения системной скорости (1..20)
 rawUnitsPerNotch := 20     ; чувствительность raw-скролла: меньше = быстрее
@@ -104,7 +101,6 @@ SetSpeedMode(mode) {
             SetMouseSpeed(baseSpeed)
         baseSpeed := 0
         speedMode := "none"
-        ToolTip
         return
     }
 
@@ -113,8 +109,6 @@ SetSpeedMode(mode) {
     SetMouseSpeed(target)
 
     speedMode := mode
-    ToolTip (mode = "fast") ? "FAST MOUSE" : "SLOW MOUSE"
-    SoundBeep 1400, 60
 }
 
 ; ================== RAW INPUT SCROLL ==================
